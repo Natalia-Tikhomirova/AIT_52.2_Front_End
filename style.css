@@ -84,11 +84,7 @@ button.clear-button {
     font-size: 0.9rem; /* Уменьшаем текст кнопок */
   }
 
-  p {
-    font-size: 14px; /* Уменьшаем размер текста параграфов */
-  }
-
-  .image-container {
+   .image-container {
     height: auto; /* Убираем фиксированную высоту для мобильных */
   }
 }
