@@ -73,18 +73,13 @@ button.clear-button {
     font-size: 14px; /* Уменьшаем базовый размер текста */
   }
 
-  form {
-    width: 100%; /* Форма занимает всю ширину экрана */
-    padding: 10px; /* Уменьшаем внутренние отступы */
-  }
-
   button.send-button,
   button.clear-button {
     padding: 8px 16px; /* Уменьшаем размер кнопок */
     font-size: 0.9rem; /* Уменьшаем текст кнопок */
   }
 
-   .image-container {
+  .image-container {
     height: auto; /* Убираем фиксированную высоту для мобильных */
   }
 }
