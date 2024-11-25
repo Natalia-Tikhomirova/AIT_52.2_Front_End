@@ -4,6 +4,9 @@ html {
 
 body {
   background-color: rgb(203, 227, 231);
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Убираем горизонтальную прокрутку */
 }
 
 h1 {
@@ -65,11 +68,16 @@ button.clear-button {
   border: 1px solid #ccc; /* Создает рамку шириной 1px со светло-серым цветом */
   border-radius: 5px; /* Делает углы формы слегка закругленными с радиусом 5px */
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 1); /* Добавляет тень вокруг формы, полностью черную и равномерную */
+  box-sizing: border-box; /* Учет рамок и отступов */
 }
 
 /* Адаптация для мобильных устройств */
 @media (max-width: 600px) {
   .image-container {
     height: auto; /* Убираем фиксированную высоту для мобильных */
+  }
+  form {
+    width: 90%; /* Ширина формы для мобильных устройств */
+    padding: 15px; /* Уменьшенные отступы */
   }
 }
