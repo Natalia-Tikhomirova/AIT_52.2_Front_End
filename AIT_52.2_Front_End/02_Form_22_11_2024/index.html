@@ -3,9 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <style>
+      h1{
+        text-align: center;
+      }
+
+    </style> -->
+
+    <!--
+    ./ - нужно остаться в той же папке
+    ../ - нужно войти во внешнюю папку (на уровень выше)
+    -->
+    <link rel="stylesheet" href="./style.css">
     <title>Document</title>
   </head>
+  <!-- 
+  - Где будет задаваться стилистика:
+  1. Inline-styles (в той же строке, где и сам элемент);
+  2. Отдельный тэг style
+  3. Отдельный файл (*.css)
+
+  - С помощью чего будет выбираться элемент(-ы) для настройки: 
+  1. С помощью имени тэга (случай 2) 
+  -->
   <body>
+    <!-- style="text-align: center;" -->
     <h1>Signup Form</h1>
     <form>
       <!-- Дефолтный блочный - div -->
@@ -35,6 +57,20 @@
       <br />
 
       <div>
+        <label for="phone">Phone:</label>
+        <input
+          id="phone"
+          title="Example: +123-456-7890"
+          type="tel"
+          placeholder="Example: +123-456-7890"
+          pattern="\+?[0-9]{3}-?[0-9]{3}-?[0-9]{4}"
+          required
+        />
+      </div>
+
+      <br />
+
+      <div>
         <label for="password">Password*:</label>
         <input
           id="password"
@@ -52,11 +88,51 @@
         <select id="hobby" required>
           <option value="">Choose your hobby:</option>
           <option value="chess">Chess - best from all over the world!</option>
-          <option value="football">Football - best from all over the world!</option>
+          <option value="football">Football - best sport from all over the world! </option>
+          <option value="no">No in the list!</option>
+            Football - best from all over the world!
+          </option>
         </select>
       </div>
 
-      <button>Finish!</button>
+      <br />
+      <div>
+        <label for="agree">I agree:</label>
+        <input
+          id="agry"
+          type="checkbox"
+          required
+        />
+      </div>
+
+      <!-- REQUIRED -->
+      <br />
+      <div>
+        <label for="Male">Male:</label> 
+        <input
+          id="male"
+          type="radio"
+          name="gender"
+          value="male"
+          required          
+        />
+
+        <label for="Female">Female:</label>
+        <input
+          id="female"
+          type="radio"
+          name="gender"
+          value="female"                           
+        />
+      </div>
+
+      <br />
+      
+      <button 
+          type="reset">Reset!</button>
+      <button
+          type="submit">Finish!</button>
+
     </form>
   </body>
 </html>

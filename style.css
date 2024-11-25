@@ -1,0 +1,54 @@
+html {
+  font-size: 16px;
+}
+
+body {
+  background-color: rgb(203, 227, 231);
+}
+
+h1 {
+  text-align: center;
+  font-size: clamp(24px, 5vw, 48px);
+  color: rgb(42, 172, 42);
+}
+
+h2 {
+  text-align: center;
+  font-size: clamp(18px, 4vw, 32px);
+  color: rgb(5, 94, 5);
+}
+
+p {
+  text-align: justify;
+  text-indent: 2em;
+  margin: 20px;
+  font-size: clamp(14px, 2.5vw, 20px);
+  line-height: 1.6;
+  color: black;
+}
+
+form {
+  width: 80%; /* Устанавливает ширину формы равной 80% ширины родительского элемента */
+  margin: 0 auto; /* Центрирует форму по горизонтали, убирая внешние отступы сверху и снизу */
+  max-width: 400px; /* Ограничивает максимальную ширину формы до 400 пикселей */
+  padding: 20px; /* Добавляет внутренний отступ внутри формы со всех сторон */
+  border: 1px solid #ccc; /* Создает рамку шириной 1px со светло-серым цветом */
+  border-radius: 5px; /* Делает углы формы слегка закругленными с радиусом 5px */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 1); /* Добавляет тень вокруг формы, полностью черную и равномерную */
+}
+
+button.send-button {
+  background-color: green;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+}
+
+button.clear-button {
+  background-color: purple;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+}
