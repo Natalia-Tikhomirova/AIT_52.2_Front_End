@@ -69,16 +69,6 @@ button.clear-button {
 
 /* Адаптация для мобильных устройств */
 @media (max-width: 600px) {
-  html {
-    font-size: 14px; /* Уменьшаем базовый размер текста */
-  }
-
-  button.send-button,
-  button.clear-button {
-    padding: 8px 16px; /* Уменьшаем размер кнопок */
-    font-size: 0.9rem; /* Уменьшаем текст кнопок */
-  }
-
   .image-container {
     height: auto; /* Убираем фиксированную высоту для мобильных */
   }
