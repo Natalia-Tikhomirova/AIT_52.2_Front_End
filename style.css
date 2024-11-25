@@ -50,17 +50,45 @@ form {
 }
 
 button.send-button {
-  background-color: green;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
+  background-color: green; /* Цвет фона кнопки */
+  color: white; /* Цвет текста */
+  padding: 10px 20px; /* Отступы внутри кнопки */
+  border: 1px solid #ccc; /* Создает рамку шириной 1px со светло-серым цветом */
+  border-radius: 5px; /* Делает углы формы слегка закругленными с радиусом 5px */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 1); /* Добавляет тень вокруг формы, полностью черную и равномерную */
 }
 
 button.clear-button {
-  background-color: purple;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
+  background-color: purple; /* Цвет фона кнопки */
+  color: white; /* Цвет текста */
+  padding: 10px 20px; /* Отступы внутри кнопки */
+  border: 1px solid #ccc; /* Создает рамку шириной 1px со светло-серым цветом */
+  border-radius: 5px; /* Делает углы формы слегка закругленными с радиусом 5px */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 1); /* Добавляет тень вокруг формы, полностью черную и равномерную */
+}
+
+/* Адаптация для мобильных устройств */
+@media (max-width: 600px) {
+  html {
+    font-size: 14px; /* Уменьшаем базовый размер текста */
+  }
+
+  form {
+    width: 100%; /* Форма занимает всю ширину экрана */
+    padding: 10px; /* Уменьшаем внутренние отступы */
+  }
+
+  button.send-button,
+  button.clear-button {
+    padding: 8px 16px; /* Уменьшаем размер кнопок */
+    font-size: 0.9rem; /* Уменьшаем текст кнопок */
+  }
+
+  p {
+    font-size: 14px; /* Уменьшаем размер текста параграфов */
+  }
+
+  .image-container {
+    height: auto; /* Убираем фиксированную высоту для мобильных */
+  }
 }
