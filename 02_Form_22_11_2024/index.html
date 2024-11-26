@@ -4,35 +4,37 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- <style>
-      h1 {
+      h1{
         text-align: center;
       }
+
     </style> -->
-    <!-- 
-      ./ - нужно остаться в той же папке
-      ../ - нужно выйти во внешнюю папку
+
+    <!--
+    ./ - нужно остаться в той же папке
+    ../ - нужно войти во внешнюю папку (на уровень выше)
     -->
-    <link rel="stylesheet" href="./style.css" />
-    <title>Form</title>
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
   </head>
   <!-- 
-      Где будет задаваться стилистика ?
-    1. Inline-styles (в той же строке, где и сам элемент);
-    2. Отдельный тэг style;
-    3. Отдельный файл (.css).
+  - Где будет задаваться стилистика:
+  1. Inline-styles (в той же строке, где и сам элемент);
+  2. Отдельный тэг style
+  3. Отдельный файл (*.css)
 
-      С помощью чего будет выбираться элемент(-ы) для настройки ?
-    1. С помощью имени тэга;
-    2. С помощью значения любого атрибута (class, id)
+  - С помощью чего будет выбираться элемент(-ы) для настройки (selector): 
+  1. С помощью имени тэга (случай 2) 
+  2. C помощью значения любого атрибута (id,)
   -->
   <body>
     <!-- style="text-align: center;" -->
     <h1>Signup Form</h1>
     <form>
-      <!-- Дефолтный блочный элемент - div -->
-      <!-- Дефолтный строчный элемент - span -->
+      <!-- Дефолтный блочный - div -->
+      <!-- Дефолтный строчный - span -->
       <div>
-        <label for="name">Name:</label>
+        <label for="name">Name*:</label>
         <input
           id="name"
           type="text"
@@ -44,7 +46,7 @@
       <br />
 
       <div>
-        <label for="email">Email:</label>
+        <label for="email">Email*:</label>
         <input
           id="email"
           type="email"
@@ -70,7 +72,7 @@
       <br />
 
       <div>
-        <label for="password">Password:</label>
+        <label for="password">Password*:</label>
         <input
           id="password"
           type="password"
@@ -86,38 +88,52 @@
         <label for="hobby">Hobby:</label>
         <select id="hobby" required>
           <option value="">Choose your hobby:</option>
-          <option value="chess">
-            Chess - best sport from all over the world!
+          <option value="chess">Chess - best from all over the world!</option>
+          <option value="football">Football - best sport from all over the world! </option>
+          <option value="no">No in the list!</option>
+            Football - best from all over the world!
           </option>
-          <option value="football">
-            Football - best sport from all over the world!
-          </option>
-          <option value="no">No in this list!</option>
         </select>
       </div>
 
       <br />
-
-      <!-- REQUIRED -->
       <div>
-        <label for="male">Male:</label>
-        <input id="male" type="radio" name="gender" value="male" required />
-
-        <label for="female">Female:</label>
-        <input id="female" type="radio" name="gender" value="female" />
+        <label for="agree">I agree:</label>
+        <input
+          id="agry"
+          type="checkbox"
+          required
+        />
       </div>
 
+      <!-- REQUIRED -->
       <br />
-
       <div>
-        <label for="agree">I agree...</label>
-        <input id="agree" type="checkbox" required />
+        <label for="Male">Male:</label> 
+        <input
+          id="male"
+          type="radio"
+          name="gender"
+          value="male"
+          required          
+        />
+
+        <label for="Female">Female:</label>
+        <input
+          id="female"
+          type="radio"
+          name="gender"
+          value="female"                           
+        />
       </div>
 
       <br />
       
-      <button class="reset" type="reset">Reset!</button>
-      <button class="submit" type="submit">Finish!</button>
+      <button class="reset"
+          type="reset">Reset!</button>
+      <button class="submit"
+          type="submit">Finish!</button>
+
     </form>
   </body>
 </html>

@@ -1,10 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&display=swap");
-
 body {
   font-family: "Covered By Your Grace", cursive;
   font-weight: 400;
   font-style: normal;
-  background-color: #f2f2f2;
+  background-color: rgb(197, 188, 188);
 }
 
 h1 {
@@ -12,7 +11,7 @@ h1 {
 }
 
 form {
-  width: 80%; /* дефолтная ширина */
+  width: 80%;
   margin: 0 auto; /* 1. по вертикали; 2. по горизонтали */
   max-width: 400px;
   padding: 20px; /* отступы со всех 4-х сторон */
@@ -22,9 +21,9 @@ form {
     1. По оси х (положительное значение - вправо, отрицательное - влево)
     2. По оси y (положительное значение - вниз, отрицательное - вверх)
     3. Размытие тени ( как быстро тень сливается с фоном)
-    4. Цвет тени: 0,1 - прозрачность
+    4. Цвет тени
     */
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /*настройка тени: как тень идет по оси х, ось y, размытие тени с фоном, цвет тени*/
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* настройка по конкретному атрибуту */
@@ -43,7 +42,7 @@ button{
   border: none;
   border-radius: 5px;
   padding:  10 px 20px;
-  margin: 10px 5 px
+  margin: 10px 5 px;
 }
 
 /*настройка по классу: button class*/
