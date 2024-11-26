@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&display=swap");
+body {
+  font-family: "Covered By Your Grace", cursive;
+  font-weight: 400;
+  font-style: normal;
+  background-color: rgb(197, 188, 188);
+}
+
+h1 {
+  text-align: center;
+}
+
+form {
+  width: 80%;
+  margin: 0 auto; /* 1. по вертикали; 2. по горизонтали */
+  max-width: 400px;
+  padding: 20px; /* отступы со всех 4-х сторон */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  /* Настройка тени: 
+    1. По оси х (положительное значение - вправо, отрицательное - влево)
+    2. По оси y (положительное значение - вниз, отрицательное - вверх)
+    3. Размытие тени ( как быстро тень сливается с фоном)
+    4. Цвет тени
+    */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* настройка по конкретному атрибуту */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"] {
+  width: 100%; /* от max-width: 400px;*/
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 5px 0 5px 5px; /* Начиная сверху по часовой стрелке */
+}
+
+button{
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  padding:  10 px 20px;
+  margin: 10px 5 px
+}
+
+/*настройка по классу: button class*/
+.reset {
+  background-color: #f44336
+}
+.submit {
+  background-color: #4caf50
+}
