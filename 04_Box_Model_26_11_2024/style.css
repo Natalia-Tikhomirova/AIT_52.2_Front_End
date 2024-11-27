@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body { /*все эти настройки скопировали на сайте из Raleway: CSS class for a variable style  */
+  background-color: whitesmoke;
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.header{
+    height: 400px;
+    background-image: url("./images/Coffee.jpg");
+    background-position: center;
+    background-size: cover;
+    /*background-repeat: no-repeat; /*отменяем повтор картинок в высоту, если высота превышает высоту картинки*/
+}
+
+h1{
+
+}
