@@ -1,70 +1,102 @@
-h1 {
-  margin-top: 20px;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+html {
+  font-size: 16px;
 }
 
 body {
-  background-color: rgb(199, 151, 74);
-  color: rgb(106, 19, 188);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  background-color: rgb(203, 227, 231);
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Убираем горизонтальную прокрутку */
 }
 
-.header {
-  font-size: large;
-  background-color: aquamarine;
-  padding: 10px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  gap: 80px;
+h1 {
+  text-align: center;
+  font-size: clamp(24px, 5vw, 48px);
+  color: rgb(42, 172, 42);
 }
 
-header a {
-  color: rgb(173, 43, 216);
-  text-decoration: none;
+h2 {
+  text-align: center;
+  font-size: clamp(18px, 4vw, 32px);
+  color: rgb(5, 94, 5);
 }
 
-.dogs-gallery {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  padding: 20px;
-  flex-wrap: wrap;
+p {
+  text-align: justify; /* Выравнивает текст по обеим сторонам, добавляя пробелы между словами */
+  text-indent: 2em; /* Устанавливает отступ для первой строки каждого абзаца, равный 2 эм */
+  margin: 20px; /* Добавляет внешние отступы по всем сторонам элемента */
+  font-size: clamp(14px, 2.5vw, 20px); /* Задает адаптивный размер шрифта: минимум 14px, максимум 20px, относительно ширины окна (2.5vw) */
+  line-height: 1.6; /* Устанавливает межстрочный интервал, равный 1.6 от размера шрифта */
+  color: black;
 }
 
-.dogs-card > img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin-bottom: 10px;
+.indent-text {
+  margin-top: 20px; /* Отступ сверху */
+  margin-bottom: 40px; /* Отступ снизу */
+  padding-left: 40px; /* Отступ слева для улучшения читаемости */
 }
 
-.dogs-card {
-  background-color: rgb(221, 231, 223);
-  border: 2px solid #ccc;
-  border-radius: 8px;
-  color: rgb(14, 101, 6);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 250px;
-  word-wrap: break-word; /* Разрывает длинные слова */
-  text-align: center; /* Дополнительно выравниваем текст */
+.image-container {
+  margin: 20px 0; /* Добавляет отступы сверху и снизу */
+  display: flex; /* Активирует Flexbox */
+  justify-content: center; /* Центрирует картинку по горизонтали */
+  align-items: center; /* Центрирует картинку по вертикали */
+  height: 50vh; /* Опционально: высота контейнера, чтобы центрировать по всей высоте экрана */
 }
 
-.dogs-card h3 {
-  color: rgb(36, 97, 30);
-  font-size: 18px;
-  margin-bottom: 10px;
+img {
+  max-width: 100%; /* Ограничивает ширину картинки */
+  height: auto; /* Сохраняет пропорции картинки */
+  display: block; /* Избегает наложения текста в строчном режиме */
+  margin: 0 auto; /* Центрирует изображение в блоке */
 }
 
-.dogs-card p {
-  color: #141313;
+form {
+  width: 80%; /* Устанавливает ширину формы равной 80% ширины родительского элемента */
+  margin: 0 auto; /* Центрирует форму по горизонтали, убирая внешние отступы сверху и снизу */
+  max-width: 400px; /* Ограничивает максимальную ширину формы до 400 пикселей */
+  padding: 20px; /* Добавляет внутренний отступ внутри формы со всех сторон */
+  border: 1px solid #ccc; /* Создает рамку шириной 1px со светло-серым цветом */
+  border-radius: 5px; /* Делает углы формы слегка закругленными с радиусом 5px */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 1); /* Добавляет тень вокруг формы, полностью черную и равномерную */
+}
+
+button {
+  cursor: pointer;
+  color: white; /* Цвет текста */
+  padding: 10px 20px; /* Отступы внутри кнопки */
+  border: 1px solid #ccc; /* Создает рамку шириной 1px со светло-серым цветом */
+  border-radius: 5px; /* Делает углы формы слегка закругленными с радиусом 5px */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 1); /* Добавляет тень вокруг формы, полностью черную и равномерную */
+  box-sizing: border-box; /* Учет рамок и отступов */
+}
+
+button.send-button {
+  background-color: green; /* Цвет фона кнопки */
+}
+
+button.clear-button {
+  background-color: purple; /* Цвет фона кнопки */
+}
+
+/* Адаптация для мобильных устройств */
+@media (max-width: 600px) {
+  .image-container {
+    height: auto; /* Убираем фиксированную высоту для мобильных */
+  }
+  form {
+    width: 90%; /* Ширина формы для мобильных устройств */
+    padding: 15px; /* Уменьшенные отступы */
+  }
+}
+
+/* настройка по конкретному атрибуту: стили для текстовых полей формы */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"] {
+  width: 100%; /* Поля растягиваются на всю ширину родительского элемента (например, контейнера формы). */
+  border: 1px solid #ccc; /* Создается тонкая сероватая рамка вокруг полей. */
+  border-radius: 5px; /* Закругляются углы полей с радиусом 5px. */
+  padding: 5px 0 5px 5px; /* Внутренние отступы: сверху — 5px, справа — 0px, снизу — 5px, слева — 5px. */
 }
