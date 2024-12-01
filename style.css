@@ -1,18 +1,30 @@
+body {
+    
+    height: 100vh; /* Высота в 100% от высоты экрана */
+    /* background-image: */
+    background-size: cover; /* изображение полностью покрыть экран */
+    background-position: center; /* Центрирует изображение */
+    background-repeat: no-repeat; /* Убирает повтор изображения */
+    background-attachment: fixed; /* Фон остаётся фиксированным при прокрутке */
+    
+}
+
 a{
     text-decoration: none;
     color: black;
 }
 .lesson-container{
-
     display: flex;
     flex-direction: column;    
 }
 
 main{
+    
     padding: 0px 30px;
 }
 
 h1{
+    
     color: blueviolet;
 }
 
