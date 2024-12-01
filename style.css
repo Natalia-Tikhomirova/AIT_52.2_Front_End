@@ -1,36 +1,79 @@
 body {
-    
-    height: 100vh; /* Высота в 100% от высоты экрана */
-    /* background-image: */
-    background-size: cover; /* изображение полностью покрыть экран */
-    background-position: center; /* Центрирует изображение */
+  font-family: Arial, sans-serif;
+  background-color: #759279;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+/* Заголовок страницы */
+h1 {
+  text-align: center;
+  color: rgb(182, 90, 15);
+  padding: 20px;
+}
+
+/* Общие стили для ссылок */
+a {
+  display: block;
+  margin: 10px 0;
+  color: #054925;
+  text-decoration: none;
+  font-size: 1.2rem; /* Увеличиваем размер шрифта */
+  font-weight: bolder; /* Делаем шрифт жирным */
+}
+
+a:hover {
+  text-decoration: underline;
+  color: rgb(185, 78, 39);
+}
+
+/* Контейнер для сетки с двумя колонками */
+.grid-container {
+    background-image: url(https://images.unsplash.com/photo-1662116137244-b7c6fdc1ac35?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fFByb2dyYW1tZXJ8ZW58MHx8MHx8fDA%3D);
     background-repeat: no-repeat; /* Убирает повтор изображения */
-    background-attachment: fixed; /* Фон остаётся фиксированным при прокрутке */
+  background-size: cover; /* Растягивает изображение, чтобы оно полностью покрывало элемент */
+  background-position: center; /* Центрирует изображение */
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Две равные колонки */
+    gap: 20px; /* Отступ между колонками */
+    padding: 20px;
+    justify-items: center; /* Центрируем элементы по горизонтали в каждой ячейке */
+    align-items: center; /* Центрируем элементы по вертикали в каждой ячейке */
+    height: 100vh; /* Высота сетки будет равна высоте экрана */
     
-}
-
-a{
-    text-decoration: none;
-    color: black;
-}
-.lesson-container{
+  }
+  
+  /* Стили для блока с уроками */
+  .lesson-container {
+    width: 60%;
     display: flex;
-    flex-direction: column;    
-}
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    background-color: #759279;  
+    padding: 20px; /* Добавляем отступы внутри контейнера */
+    border-radius: 8px;
+    border: 2px solid #686767;/* Создает рамку шириной 2px */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 1); /* Добавляет тень вокруг формы, полностью черную и равномерную */
+  }
+  
+  /* Стили для блока с домашними заданиями */
+  .homework-container {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    background-color: #759279;  
+    padding: 20px; /* Добавляем отступы внутри контейнера */
+    border-radius: 8px;
+    border: 2px solid #686767;/* Создает рамку шириной 2px */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 1); /* Добавляет тень вокруг формы, полностью черную и равномерную */
+  }
+  
 
-main{
-    
-    padding: 0px 30px;
-}
-
-h1{
-    
-    color: blueviolet;
-}
-
-
-/* стили с псевдоклассом hover применятся к элементу при наведении на него мышкой*/
-a:hover{
-    text-decoration: underline;
-    color: coral;
+/* Стили для заголовков внутри контейнеров */
+h2 {
+  color: #333;
 }
