@@ -149,9 +149,7 @@ h2 {
     background-color: rgb(67, 199, 67);
   }
 
-  .grid-container div {
-    height: 170px;
-  }
+ 
 }
 
 @media (max-width: 430px) {
@@ -159,7 +157,5 @@ h2 {
     background-color: rgb(162, 248, 162);
   }
 
-  .grid-container div {
-    height: 200px;
-  }
+  
 }
