@@ -28,6 +28,17 @@ a:hover {
   color: rgb(185, 78, 39);
 }
 
+/* стили с псевдоклассом hover применятся к элементу при наведении на него мышкой */
+.lesson-link:hover {
+  text-decoration: underline;
+  color: coral;
+}
+
+.homework-link:hover {
+  text-decoration: underline;
+  color: forestgreen;
+}
+
 /* Контейнер для сетки с двумя колонками */
 .grid-container {
     background-image: url("./Фон.jpg");
