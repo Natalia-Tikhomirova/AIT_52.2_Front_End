@@ -51,3 +51,23 @@ h1{
 .right {
     right: 15px;
 }
+
+.back-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #536956; /* Цвет фона кнопки */
+    color: white; /* Цвет текста */
+    border: none; /* Убираем стандартную рамку */
+    padding: 10px 15px; /* Внутренние отступы */
+    border-radius: 5px; /* Скругление углов */
+    font-size: 14px; /* Размер шрифта */
+    font-weight: bold; /* Жирность текста */
+    cursor: pointer; /* Курсор руки */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Плавное изменение фона и тени */
+  }
+  
+  .back-button:hover {
+    background-color: #435247; /* Цвет кнопки при наведении */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.6); /* Черная тень при наведении */
+  }
