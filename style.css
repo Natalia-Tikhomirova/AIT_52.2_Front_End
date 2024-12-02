@@ -6,20 +6,19 @@
 body {
   font-family: Arial, sans-serif;
   background-color: #759279;
-  height: 100vh;
   display: flex;
   flex-direction: column; /* вертикальная раскладка*/
   min-height: 100vh; /*страница займет весь экран */
 }
 
 header {
-  
   position: sticky; /* 'приклеиваем' элемент на страницу с помощью position sticky  */
   top: 0px; /* не забываем добавить значение в пикселях для одной из координат чтобы sticky сработал ( top / left / right / bottom ) */
   display: flex;
   align-items: center; /* Вертикальное центрирование */
   justify-content: center; /* Горизонтальное центрирование */
   height: 80px;
+  padding: 10px;
   background-color: #536956;
   text-align: center;
 }
@@ -32,8 +31,6 @@ main {
 footer {
   height: 50px;
   background: rgb(75, 62, 48);
-  color: white;
-  display: flex;
   display: flex; /* Для центрирования содержимого */
   align-items: center; /* Вертикальное выравнивание */
   justify-content: center; /* Горизонтальное выравнивание */
@@ -48,7 +45,6 @@ footer img {
 h1 {
   text-align: center;
   color: rgb(182, 90, 15);
-  padding: 20px;
   font-size: 1.5rem;
 }
 
@@ -146,7 +142,7 @@ h2 {
 
 @media (max-width: 768px) {
   header {
-    background-color:  #5e8d64;
+    background-color: #5e8d64;
   }
   .grid-container {
     grid-template-columns: 1fr; /* Одна колонка вместо двух */
@@ -154,7 +150,8 @@ h2 {
     height: auto; /* Высота автоматически подстраивается */
   }
 
-  .lesson-container, .homework-container {
+  .lesson-container,
+  .homework-container {
     width: 80%; /* Уменьшение ширины контейнеров */
     margin: 0 auto; /* Центрируем контейнер */
   }
@@ -169,17 +166,20 @@ h2 {
   }
 }
 
-
 @media (max-width: 430px) {
   header {
     background-color: rgb(42, 143, 129);
+    padding: 15px; /* Добавляем больше отступа сверху */
+    height: auto; /* Высота будет подстраиваться под содержимое */
   }
   .grid-container {
     grid-template-columns: 1fr; /* Одна колонка */
+    gap: 15px; /* Уменьшаем расстояние между элементами */
     padding: 5px;
   }
 
-  .lesson-container, .homework-container {
+  .lesson-container,
+  .homework-container {
     width: 90%; /* Уменьшение ширины контейнеров */
     padding: 10px; /* Уменьшаем внутренние отступы */
   }
@@ -197,4 +197,3 @@ h2 {
     height: 15px; /* Уменьшаем логотип в футере */
   }
 }
-  
