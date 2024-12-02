@@ -148,14 +148,53 @@ h2 {
   header {
     background-color:  #5e8d64;
   }
+  .grid-container {
+    grid-template-columns: 1fr; /* Одна колонка вместо двух */
+    padding: 10px;
+    height: auto; /* Высота автоматически подстраивается */
+  }
 
- 
+  .lesson-container, .homework-container {
+    width: 80%; /* Уменьшение ширины контейнеров */
+    margin: 0 auto; /* Центрируем контейнер */
+  }
+
+  h1 {
+    font-size: 1.2rem; /* Уменьшаем размер заголовка */
+    padding: 10px;
+  }
+
+  a {
+    font-size: 1rem; /* Уменьшаем размер ссылок */
+  }
 }
+
 
 @media (max-width: 430px) {
   header {
     background-color: rgb(42, 143, 129);
   }
+  .grid-container {
+    grid-template-columns: 1fr; /* Одна колонка */
+    padding: 5px;
+  }
 
-  
+  .lesson-container, .homework-container {
+    width: 90%; /* Уменьшение ширины контейнеров */
+    padding: 10px; /* Уменьшаем внутренние отступы */
+  }
+
+  h1 {
+    font-size: 1rem; /* Ещё меньше размер текста */
+    padding: 5px;
+  }
+
+  a {
+    font-size: 0.9rem; /* Уменьшаем размер ссылок */
+  }
+
+  footer img {
+    height: 15px; /* Уменьшаем логотип в футере */
+  }
 }
+  
