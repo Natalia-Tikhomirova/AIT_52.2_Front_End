@@ -1,16 +1,55 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body {
   font-family: Arial, sans-serif;
   background-color: #759279;
   height: 100vh;
-  margin: 0;
-  padding: 0;
+  display: flex;
+  flex-direction: column; /* вертикальная раскладка*/
+  min-height: 100vh; /*страница займет весь экран */
 }
 
-/* Заголовок страницы */
+header {
+  
+  position: sticky; /* 'приклеиваем' элемент на страницу с помощью position sticky  */
+  top: 0px; /* не забываем добавить значение в пикселях для одной из координат чтобы sticky сработал ( top / left / right / bottom ) */
+  display: flex;
+  align-items: center; /* Вертикальное центрирование */
+  justify-content: center; /* Горизонтальное центрирование */
+  height: 80px;
+  background-color: #536956;
+  text-align: center;
+}
+
+main {
+  flex: 1; /* Занимает всё оставшееся пространство */
+  padding: 10px;
+}
+
+footer {
+  height: 50px;
+  background: rgb(75, 62, 48);
+  color: white;
+  display: flex;
+  display: flex; /* Для центрирования содержимого */
+  align-items: center; /* Вертикальное выравнивание */
+  justify-content: center; /* Горизонтальное выравнивание */
+}
+
+footer img {
+  height: 20px;
+  margin: 10px;
+}
+
+/* Заголовок  */
 h1 {
   text-align: center;
   color: rgb(182, 90, 15);
   padding: 20px;
+  font-size: 1.5rem;
 }
 
 /* Общие стили для ссылок */
@@ -23,12 +62,30 @@ a {
   font-weight: bolder; /* Делаем шрифт жирным */
 }
 
+/*  стиль для ссылки */
 a:hover {
-  text-decoration: underline;
+  text-decoration: none; /* Убирает стандартное подчёркивание у ссылки */
+  transition: transform 0.3s ease; /* Добавляет анимацию изменения свойства transform (масштабирования) с продолжительностью 0.3 секунды и плавным эффектом (ease). */
   color: rgb(185, 78, 39);
+  transform: scale(
+    1.1
+  ); /* Увеличивает масштаб элемента на 10% (относительно исходного размера) при наведении. */
 }
 
-/* стили с псевдоклассом hover применятся к элементу при наведении на него мышкой */
+/* псевдоэлемент before / after используется для добавления контента до или после элемента (лучше подходит для группы элементов) */
+
+/* каждой ссылке при создании будет добавлять текст из content
+a::before {
+  content: "⚡️ ";
+} */
+
+/*.grid-container a{
+  color: rgb(0, 0, 0);
+text-decoration: none;  /* свойство transform будет плавным на 0.3 секунды
+transition: transform 0.3s ease;
+} */
+
+/* стили с псевдоклассом hover применятся к элементу при наведении на него мышкой 
 .lesson-link:hover {
   text-decoration: underline;
   color: coral;
@@ -37,61 +94,72 @@ a:hover {
 .homework-link:hover {
   text-decoration: underline;
   color: forestgreen;
-}
+} */
 
 /* Контейнер для сетки с двумя колонками */
 .grid-container {
-    background-image: url("./Фон.jpg");
-    background-repeat: no-repeat; /* Убирает повтор изображения */
+  display: grid;
+  gap: 20px; /* Отступ между колонками */
+  background-image: url("./Фон.jpg");
+  background-repeat: no-repeat; /* Убирает повтор изображения */
   background-size: cover; /* Растягивает изображение, чтобы оно полностью покрывало элемент */
   background-position: center; /* Центрирует изображение */
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Две равные колонки */
-    gap: 20px; /* Отступ между колонками */
-    padding: 20px;
-    justify-items: center; /* Центрируем элементы по горизонтали в каждой ячейке */
-    align-items: center; /* Центрируем элементы по вертикали в каждой ячейке */
-    height: 100vh; /* Высота сетки будет равна высоте экрана */
-    
-  }
-  
-  /* Стили для блока с уроками */
-  .lesson-container {
-    width: 60%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    background-color: #759279;  
-    padding: 20px; /* Добавляем отступы внутри контейнера */
-    border-radius: 8px;
-    border: 2px solid #686767;/* Создает рамку шириной 2px */
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 1); /* Добавляет тень вокруг формы, полностью черную и равномерную */
-  }
-  
-  /* Стили для блока с домашними заданиями */
-  .homework-container {
-    width: 60%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    background-color: #759279;  
-    padding: 20px; /* Добавляем отступы внутри контейнера */
-    border-radius: 8px;
-    border: 2px solid #686767;/* Создает рамку шириной 2px */
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 1); /* Добавляет тень вокруг формы, полностью черную и равномерную */
-  }
-  
+  grid-template-columns: 1fr 1fr;
+  padding: 20px;
+  justify-items: center; /* Центрируем элементы по горизонтали в каждой ячейке */
+  align-items: center; /* Центрируем элементы по вертикали в каждой ячейке */
+  height: 100vh; /* Высота сетки будет равна высоте экрана */
+}
+
+/* Стили для блока с уроками */
+.lesson-container {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  background-color: #759279;
+  padding: 20px; /* Добавляем отступы внутри контейнера */
+  border-radius: 8px;
+  border: 2px solid #686767; /* Создает рамку шириной 2px */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 1); /* Добавляет тень вокруг формы, полностью черную и равномерную */
+}
+
+/* Стили для блока с домашними заданиями */
+.homework-container {
+  width: 60%;
+  display: flex;
+  flex-direction: column; /* располагаем элементы сверху вниз*/
+  justify-content: center;
+  text-align: center;
+  background-color: #759279;
+  padding: 20px; /* Добавляем отступы внутри контейнера */
+  border-radius: 8px;
+  border: 2px solid #686767; /* Создает рамку шириной 2px */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 1); /* Добавляет тень вокруг формы, полностью черную и равномерную */
+}
 
 /* Стили для заголовков внутри контейнеров */
 h2 {
   color: #333;
 }
 
-/* псевдоэлемент before / after используется для добавления контента до или после элемента (лучше подходит для группы элементов) */
+@media (max-width: 768px) {
+  header {
+    background-color: rgb(67, 199, 67);
+  }
 
-/* каждой ссылке при создании будет добавлять текст из content*/
-a::before {
-  content: "⚡️ ";
+  .grid-container div {
+    height: 170px;
+  }
+}
+
+@media (max-width: 430px) {
+  header {
+    background-color: rgb(162, 248, 162);
+  }
+
+  .grid-container div {
+    height: 200px;
+  }
 }
