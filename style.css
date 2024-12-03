@@ -32,7 +32,6 @@ main {
 }
 
 footer {
-  height: 50px;
   background: rgb(75, 62, 48);
   display: flex; /* Для центрирования содержимого */
   align-items: center; /* Вертикальное выравнивание */
