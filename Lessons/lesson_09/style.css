@@ -193,7 +193,7 @@ body {
     }
   
     nav {
-      display: none; /* Прячем навигацию, можно заменить на меню-гамбургер */
+      display: none; 
     }
   
     .services {
