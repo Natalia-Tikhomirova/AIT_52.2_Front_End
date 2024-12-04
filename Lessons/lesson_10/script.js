@@ -38,3 +38,4 @@ btnCreate.addEventListener("click", () => {
   document.body.append(newElement)
 })
 
+btnCreate.addEventListener()
