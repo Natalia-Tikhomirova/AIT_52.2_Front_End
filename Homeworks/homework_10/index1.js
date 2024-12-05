@@ -11,9 +11,17 @@ clonedBtn.style.backgroundColor = "#a78b71";
 clonedBtn.style.color = "white";
 clonedBtn.className = "second-btn"
 
-btn.addEventListener('click', () => {  
-    document.body.append(clonedBtn) /* добавляем склонированную кнопку*/
+btn.addEventListener("click", () => {
+    // добавляем к body склонированную кнопку
+    document.body.append(clonedBtn);
+    // console.log("первый слушатель!");
+  });
   
-})
-
-// здесь можете создать EventListener для второй кнопки
+  // здесь можете создать EventListener для второй кнопки
+  clonedBtn.addEventListener("click", () => {
+    btn.style.backgroundColor = "#9c4a1a";
+    btn.style.color = "black";
+    // console.log("второй слушатель!!");
+  });
+  
+  // console.log("основной блок кода!");
