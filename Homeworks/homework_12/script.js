@@ -41,12 +41,13 @@ for (let i = 0; i < numbers.length; i++) {
     console.log(numbers[i] * 2);    
 }
 
-// Создайте новый массив, где каждый элемент будет равен квадрату элемента из исходного массива.
+// 2. Создайте новый массив, где каждый элемент будет равен квадрату элемента из исходного массива.
 let squaredNumbers = [];
 for (let i = 0; i < numbers.length; i++) {
     squaredNumbers.push(numbers[i] ** 2);
 }
 
+// 3. Выведите оба массива (исходный и новый) в консоль.
 console.log("Исходный массив:", numbers);
 console.log("Новый массив:", squaredNumbers);
 
