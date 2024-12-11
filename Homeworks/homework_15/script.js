@@ -74,7 +74,7 @@ const deposit = document.getElementById('deposit');
 deposit.onclick = function () {
   // TODO (Описание действия при нажатии на кнопку deposit)
 
-  const accountId = document.getElementById("accountId").value.trim();     // Получаем ID аккаунта из поля ввода
+  const accountId = document.getElementById("accountId").value.trim();     // Получаем ID аккаунта из поля ввода 
   const amount = document.getElementById("amount").value.trim();           // Получаем сумму из поля ввода
 
   if (!(accountId && amount > 0)) {                                        // Проверяем, что ID и сумма введены корректно
@@ -99,7 +99,7 @@ withdraw.onclick = function () {
   // TODO (Описание действия при нажатии на кнопку withdraw)
 
   const accountId = document.getElementById("accountId").value.trim();       // Получаем ID аккаунта из поля ввода
-    const amount = document.getElementById("amount").value.trim();           // Получаем сумму из поля ввода
+  const amount = document.getElementById("amount").value.trim();             // Получаем сумму из поля ввода
 
     if (!(accountId && amount > 0)) {                                        // Проверяем, что ID и сумма введены корректно
         alert("Please enter a valid Account ID and Amount.");
