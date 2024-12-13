@@ -41,3 +41,6 @@ input {
 #accountList {
     list-style: none;
 }
+#accountList li{
+    margin: 10px 0;
+}

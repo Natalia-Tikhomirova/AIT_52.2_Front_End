@@ -62,11 +62,15 @@ function showAccounts() {
 
     // Перебираем массив `bank` и добавляем информацию о каждом аккаунте в список
   bank.forEach((account, index) => {
-    // Добавляем новую строку `<li>` с информацией о текущем аккаунте
-    accountList.innerHTML += `<li>${index + 1}. 
-    ID: ${account.accountNumber}, 
-    Name: ${account.accountHolderName}, 
-    Balance: ${account.balance}</li>`;
+     // Создаем элемент списка с кнопкой удаления
+     const listItem = document.createElement("li");
+     listItem.innerHTML = `
+         ${index + 1}. ID: ${account.accountNumber}, 
+         Name: ${account.accountHolderName}, 
+         Balance: ${account.balance} 
+         <button onclick="deleteAccount(${account.accountNumber})">Delete</button>
+     `;
+     accountList.appendChild(listItem); // Добавляем элемент в список
   });
 }
 
@@ -105,6 +109,22 @@ function operation(operator) {
   amountInput.value = "";                                         // Очищаем поле ввода суммы
 }
 
-// Привязываем обработчики событий к кнопкам
-document.getElementById("deposit").onclick = () => operation('deposit');   // Обработчик для пополнения
-document.getElementById("withdraw").onclick = () => operation('withdraw'); // Обработчик для снятия
+function deleteAccount(accountId) {
+  // Подтверждение удаления аккаунта
+  const confirmDelete = confirm(`Are you sure you want to delete the account with ID ${accountId}?`);
+  
+  if (confirmDelete) {                                              // Если пользователь подтвердил удаление
+      // Находим индекс аккаунта в массиве `bank`
+      const accountIndex = bank.findIndex(e => e.accountNumber === accountId);
+      
+      if (accountIndex !== -1) {                                   // Если аккаунт найден
+          bank.splice(accountIndex, 1);                            // Удаляем аккаунт из массива
+          alert(`Account with ID ${accountId} has been deleted.`); // Сообщаем об удалении
+          showAccounts();                                          // Обновляем список аккаунтов
+      } else {
+          alert("Account not found");                              // Если аккаунт не найден
+      }
+  } else {
+      alert("Account deletion canceled.");                          // Если пользователь отменил удаление
+  }
+}
