@@ -56,24 +56,34 @@ function createAccount() {
 }
 
 function showAccounts() {
-  const accountList = document.getElementById("accountList");  // Находим элемент HTML с id="accountList" (список, куда будем добавлять информацию об аккаунтах)
+  const accountList = document.getElementById("accountList"); // Находим элемент для списка аккаунтов
+  accountList.innerHTML = ""; // Очищаем список перед добавлением новых данных
 
-  accountList.innerHTML = "";                                 // Очищаем содержимое списка перед добавлением обновленных данных
-
-    // Перебираем массив `bank` и добавляем информацию о каждом аккаунте в список
+  // Перебираем массив bank и добавляем информацию о каждом аккаунте
   bank.forEach((account, index) => {
-     // Создаем элемент списка с кнопкой удаления
-     const listItem = document.createElement("li");
-     listItem.innerHTML = `
-         <input type="checkbox" data-id="${account.accountNumber}">  <!-- Флажок для выбора -->
-      ${index + 1}. ID: ${account.accountNumber}, 
-      Name: ${account.accountHolderName}, 
-      Balance: ${account.balance} 
-      <button onclick="deleteAccount(${account.accountNumber})">Delete</button>  <!-- Кнопка удаления -->
-    `;
-     accountList.appendChild(listItem); // Добавляем элемент в список
+    const listItem = document.createElement("li");
+    
+    // Создаем флажок для выбора
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.dataset.id = account.accountNumber; // Связываем флажок с ID аккаунта
+
+    // Создаем кнопку для удаления аккаунта
+    const deleteButton = document.createElement("button");
+    deleteButton.textContent = "Delete";
+    deleteButton.onclick = function () {
+      deleteAccount(account.accountNumber);
+    };
+
+    // Добавляем флажок, данные и кнопку в список
+    listItem.appendChild(checkbox);
+    listItem.appendChild(document.createTextNode(` ${index + 1}. ID: ${account.accountNumber}, Name: ${account.accountHolderName}, Balance: ${account.balance} `));
+    listItem.appendChild(deleteButton);
+    
+    accountList.appendChild(listItem); // Добавляем элемент в список
   });
 }
+
 
 // ДЕБЕТОВАЯ КАРТА (карта не уходящая в минус!)
 
@@ -113,28 +123,28 @@ function operation(operator) {
 function deleteAccount(accountId) {
   // Подтверждение удаления аккаунта
   const confirmDelete = confirm(`Are you sure you want to delete the account with ID ${accountId}?`);
-  
-  if (confirmDelete) {                                              // Если пользователь подтвердил удаление
-      // Находим индекс аккаунта в массиве `bank`
-      const accountIndex = bank.findIndex(e => e.accountNumber === accountId);
-      
-      if (accountIndex !== -1) {                                   // Если аккаунт найден
-          bank.splice(accountIndex, 1);                            // Удаляем аккаунт из массива
-          alert(`Account with ID ${accountId} has been deleted.`); // Сообщаем об удалении
-          showAccounts();                                          // Обновляем список аккаунтов
-      } else {
-          alert("Account not found");                              // Если аккаунт не найден
-      }
+
+  if (confirmDelete) {
+    // Находим индекс аккаунта в массиве `bank`
+    const accountIndex = bank.findIndex(e => e.accountNumber === accountId);
+
+    if (accountIndex !== -1) {
+      bank.splice(accountIndex, 1);                               // Удаляем аккаунт из массива
+      alert(`Account with ID ${accountId} has been deleted.`);    // Сообщаем об удалении
+      showAccounts();                                             // Обновляем список аккаунтов
+    } else {
+      alert("Account not found");                                 // Если аккаунт не найден
+    }
   } else {
-      alert("Account deletion canceled.");                          // Если пользователь отменил удаление
+    alert("Account deletion canceled.");                          // Если пользователь отменил удаление
   }
 }
 
 function deleteSelected() {
   const selectedAccounts = document.querySelectorAll('input[type="checkbox"]:checked');
   selectedAccounts.forEach(account => {
-    const accountId = account.dataset.id; // Получаем ID аккаунта
-    deleteAccount(accountId); // Удаляем аккаунт
+    const accountId = Number(account.dataset.id);                 // Убедимся, что ID аккаунта преобразуется в число
+    deleteAccount(accountId);                                     // Удаляем аккаунт
   });
-  showAccounts(); // Обновляем список после удаления
+  showAccounts();                                                 // Обновляем список после удаления
 }
