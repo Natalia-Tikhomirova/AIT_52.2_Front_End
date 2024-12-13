@@ -57,7 +57,7 @@ function createAccount() {
 
 function showAccounts() {
   const accountList = document.getElementById("accountList"); // Находим элемент для списка аккаунтов
-  accountList.innerHTML = ""; // Очищаем список перед добавлением новых данных
+  accountList.innerHTML = "";                                 // Очищаем список перед добавлением новых данных
 
   // Перебираем массив bank и добавляем информацию о каждом аккаунте
   bank.forEach((account, index) => {
@@ -66,7 +66,7 @@ function showAccounts() {
     // Создаем флажок для выбора
     const checkbox = document.createElement("input");
     checkbox.type = "checkbox";
-    checkbox.dataset.id = account.accountNumber; // Связываем флажок с ID аккаунта
+    checkbox.dataset.id = account.accountNumber;              // Связываем флажок с ID аккаунта
 
     // Создаем кнопку для удаления аккаунта
     const deleteButton = document.createElement("button");
@@ -80,7 +80,7 @@ function showAccounts() {
     listItem.appendChild(document.createTextNode(` ${index + 1}. ID: ${account.accountNumber}, Name: ${account.accountHolderName}, Balance: ${account.balance} `));
     listItem.appendChild(deleteButton);
     
-    accountList.appendChild(listItem); // Добавляем элемент в список
+    accountList.appendChild(listItem);                     // Добавляем элемент в список
   });
 }
 
