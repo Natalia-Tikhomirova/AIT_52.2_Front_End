@@ -65,11 +65,12 @@ function showAccounts() {
      // Создаем элемент списка с кнопкой удаления
      const listItem = document.createElement("li");
      listItem.innerHTML = `
-         ${index + 1}. ID: ${account.accountNumber}, 
-         Name: ${account.accountHolderName}, 
-         Balance: ${account.balance} 
-         <button onclick="deleteAccount(${account.accountNumber})">Delete</button>
-     `;
+         <input type="checkbox" data-id="${account.accountNumber}">  <!-- Флажок для выбора -->
+      ${index + 1}. ID: ${account.accountNumber}, 
+      Name: ${account.accountHolderName}, 
+      Balance: ${account.balance} 
+      <button onclick="deleteAccount(${account.accountNumber})">Delete</button>  <!-- Кнопка удаления -->
+    `;
      accountList.appendChild(listItem); // Добавляем элемент в список
   });
 }
@@ -127,4 +128,13 @@ function deleteAccount(accountId) {
   } else {
       alert("Account deletion canceled.");                          // Если пользователь отменил удаление
   }
+}
+
+function deleteSelected() {
+  const selectedAccounts = document.querySelectorAll('input[type="checkbox"]:checked');
+  selectedAccounts.forEach(account => {
+    const accountId = account.dataset.id; // Получаем ID аккаунта
+    deleteAccount(accountId); // Удаляем аккаунт
+  });
+  showAccounts(); // Обновляем список после удаления
 }
