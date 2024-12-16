@@ -69,19 +69,18 @@ h1 {
   }
 
   .character-card {
-    width: 150px; 
+    width: 150px;
     padding: 8px;
   }
 
   .character-card h3 {
-    font-size: 16px; 
+    font-size: 16px;
   }
 
   .character-card p {
-    font-size: 12px; 
+    font-size: 13px;
   }
 }
-
 
 @media (max-width: 1024px) and (min-width: 769px) {
   .gallery {
@@ -90,14 +89,6 @@ h1 {
   }
 
   .character-card {
-    width: 180px; 
-  }
-
-  .character-card h3 {
-    font-size: 17px;
-  }
-
-  .character-card p {
-    font-size: 13px;
+    width: 180px;
   }
 }
