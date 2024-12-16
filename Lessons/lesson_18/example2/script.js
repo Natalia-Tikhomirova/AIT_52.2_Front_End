@@ -10,6 +10,7 @@ const originElement = document.querySelector('#morty-origin')
 fetch("https://rickandmortyapi.com/api/character")
   // первым .then() дожидаемся 'сырых' данных и преобразуем их в JS объект с помощью .json()
   .then(res => res.json())
+  // в data уже придут обработанные данные готовые к использованию
   .then(data => {
     console.log(data.results[1].image);
     img.src = data.results[1].image;
