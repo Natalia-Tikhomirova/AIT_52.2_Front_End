@@ -34,16 +34,16 @@ h1 {
   background: linear-gradient(145deg, #80deea, #e0f7fa);
 }
 .character-card h3 {
-  font-size: 16px;
+  font-size: 17px;
   margin: 10px 0 5px;
   color: #560e8d;
   transition: color 0.3s;
 }
 
 .character-card p {
-  font-size: 14px;
+  font-size: 15px;
   margin: 5px 0;
-  color: #082d26;
+  color: #04211c;
   transition: color 0.3s;
 }
 .character-card:hover h3,
