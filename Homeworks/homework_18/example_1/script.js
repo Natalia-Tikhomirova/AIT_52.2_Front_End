@@ -21,6 +21,8 @@ fetch("https://rickandmortyapi.com/api/character")
     originElement.textContent = character.origin.name; 
 
    }); 
+
+   
   
      
   
