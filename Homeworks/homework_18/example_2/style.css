@@ -57,3 +57,47 @@ h1 {
   border-radius: 8px;
   height: auto;
 }
+
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+
+  .gallery {
+    padding: 10px;
+    max-width: 100%;
+  }
+
+  .character-card {
+    width: 150px; 
+    padding: 8px;
+  }
+
+  .character-card h3 {
+    font-size: 16px; 
+  }
+
+  .character-card p {
+    font-size: 12px; 
+  }
+}
+
+
+@media (max-width: 1024px) and (min-width: 769px) {
+  .gallery {
+    gap: 15px;
+    padding: 15px;
+  }
+
+  .character-card {
+    width: 180px; 
+  }
+
+  .character-card h3 {
+    font-size: 17px;
+  }
+
+  .character-card p {
+    font-size: 13px;
+  }
+}
