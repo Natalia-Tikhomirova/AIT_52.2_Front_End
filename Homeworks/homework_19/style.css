@@ -45,35 +45,39 @@ h3{
   border-radius: 5px;
 }
 
-@media (max-width: 768px) {
+
+@media (min-width: 768px) and (max-width: 1024px) {
     #grid-products {
-      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Меньший размер карточек */
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /* Сетка для планшета */
       gap: 15px;
+      padding: 15px;
+    }
+  
+    .product-card {
+      width: 180px; /* Меньше ширина карточек */
+      padding: 10px;
+    }
+  
+    .product-card img {
+      border-radius: 10px;
+    }
+  }
+
+@media (max-width: 375px) {
+    #grid-products {
+      grid-template-columns: 1fr; /* Одноколоночная сетка */
+      gap: 10px;
       padding: 10px;
     }
   
     .product-card {
-      width: 150px; /* Уменьшаем ширину карточек */
+      width: 100%; /* Карточка на всю ширину экрана */
       padding: 8px;
-    }
-  }
-  
-  /* Мобильные устройства (экран до 480px шириной) */
-  @media (max-width: 480px) {
-    #grid-products {
-      grid-template-columns: 1fr; /* Одноколоночная сетка */
-      gap: 10px;
-      padding: 5px;
-    }
-  
-    .product-card {
-      width: 100%; /* Занимает всю ширину экрана */
-      padding: 5px;
+      margin: 0;
+      box-sizing: border-box;
       font-size: 14px; /* Уменьшаем шрифт */
     }
   
-    .product-card img {
-      width: 100%; /* Адаптируем изображение */
-      height: auto;
-    }
   }
+  
+  
