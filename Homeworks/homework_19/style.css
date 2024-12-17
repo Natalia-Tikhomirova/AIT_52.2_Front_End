@@ -6,9 +6,8 @@ body {
   background-color: #ababce;
 }
 
-
-h3{
-    color: rgb(180, 26, 204);
+h3 {
+  color: rgb(180, 26, 204);
 }
 
 #grid-products {
@@ -45,39 +44,40 @@ h3{
   border-radius: 5px;
 }
 
-
 @media (min-width: 768px) and (max-width: 1024px) {
-    #grid-products {
-      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /* Сетка для планшета */
-      gap: 15px;
-      padding: 15px;
-    }
-  
-    .product-card {
-      width: 180px; /* Меньше ширина карточек */
-      padding: 10px;
-    }
-  
-    .product-card img {
-      border-radius: 10px;
-    }
+  #grid-products {
+    grid-template-columns: repeat(
+      auto-fill,
+      minmax(180px, 1fr)
+    ); /* Сетка для планшета */
+    gap: 15px;
+    padding: 15px;
   }
+
+  .product-card {
+    width: 180px; /* Меньше ширина карточек */
+    padding: 10px;
+  }
+
+  .product-card img {
+    border-radius: 10px;
+  }
+}
 
 @media (max-width: 375px) {
-    #grid-products {
-      grid-template-columns: 1fr; /* Одноколоночная сетка */
-      gap: 10px;
-      padding: 10px;
-    }
-  
-    .product-card {
-      width: 100%; /* Карточка на всю ширину экрана */
-      padding: 8px;
-      margin: 0;
-      box-sizing: border-box;
-      font-size: 14px; /* Уменьшаем шрифт */
-    }
-  
+  #grid-products {
+    display: flex;
+    flex-direction: column; /* Располагаем элементы вертикально */
+    align-items: center; /* Выравниваем карточки по центру */
+    gap: 10px;
+    padding: 10px;
   }
-  
-  
+
+  .product-card {
+    /* width: 100%; /* Карточка на всю ширину экрана */
+    padding: 8px;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 14px; /* Уменьшаем шрифт */
+  }
+}
