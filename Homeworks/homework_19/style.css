@@ -44,3 +44,36 @@ h3{
   height: auto;
   border-radius: 5px;
 }
+
+@media (max-width: 768px) {
+    #grid-products {
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Меньший размер карточек */
+      gap: 15px;
+      padding: 10px;
+    }
+  
+    .product-card {
+      width: 150px; /* Уменьшаем ширину карточек */
+      padding: 8px;
+    }
+  }
+  
+  /* Мобильные устройства (экран до 480px шириной) */
+  @media (max-width: 480px) {
+    #grid-products {
+      grid-template-columns: 1fr; /* Одноколоночная сетка */
+      gap: 10px;
+      padding: 5px;
+    }
+  
+    .product-card {
+      width: 100%; /* Занимает всю ширину экрана */
+      padding: 5px;
+      font-size: 14px; /* Уменьшаем шрифт */
+    }
+  
+    .product-card img {
+      width: 100%; /* Адаптируем изображение */
+      height: auto;
+    }
+  }
