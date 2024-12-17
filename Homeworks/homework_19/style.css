@@ -44,39 +44,31 @@ h3 {
   border-radius: 5px;
 }
 
-@media (min-width: 768px) and (max-width: 1024px) {
-  #grid-products {
-    display: flex;
-    flex-direction: column; /* Располагаем элементы вертикально */
-    align-items: center; /* Выравниваем карточки по центру */
-    gap: 15px;
-    padding: 15px;
+/* Адаптация для планшетов и маленьких экранов */
+@media (max-width: 1024px) {
+    #grid-products {
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Ширина карточек больше */
+    }
+  
+    .product-card {
+      width: 90%; /* Занимает 90% ширины родителя */
+      padding: 12px; /* Немного увеличиваем отступы */
+    }
   }
-
-  .product-card {
-    width: 180px; /* Меньше ширина карточек */
-    padding: 10px;
+  
+  /* Адаптация для мобильных */
+  @media (max-width: 375px) {
+    #grid-products {
+      grid-template-columns: 1fr; /* Одна колонка */
+      gap: 15px;
+      padding: 10px;
+    }
+  
+    .product-card {
+      width: 100%; /* Занимает всю ширину экрана */
+      font-size: 14px; /* Меньше шрифт */
+      padding: 8px;
+      margin: 0;
+      box-sizing: border-box;
+    }
   }
-
-  .product-card img {
-    border-radius: 10px;
-  }
-}
-
-@media (max-width: 375px) {
-  #grid-products {
-    display: flex;
-    flex-direction: column; /* Располагаем элементы вертикально */
-    align-items: center; /* Выравниваем карточки по центру */
-    gap: 10px;
-    padding: 10px;
-  }
-
-  .product-card {
-    /* width: 100%; /* Карточка на всю ширину экрана */
-    padding: 8px;
-    margin: 0;
-    box-sizing: border-box;
-    font-size: 14px; /* Уменьшаем шрифт */
-  }
-}
