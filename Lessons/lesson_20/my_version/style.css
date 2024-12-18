@@ -1,0 +1,55 @@
+/* Основные стили */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background: linear-gradient(135deg, #e0f7fa, #80deea);
+    color: #12694f;
+}
+
+/* Заголовок */
+h1 {
+    color: #843eb0;
+    margin-top: 20px;
+    text-shadow: 0 0 10px #23888b;
+}
+
+/* Контейнер для данных */
+#weather-container {
+    background-color: rgb(229, 207, 240);
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    max-width: 300px;
+    margin: 20px auto;
+    text-align: center;
+    transition: all 0.3s ease; /* Плавное изменение */
+}
+
+/* Эффект при наведении на контейнер */
+#weather-container:hover{
+    background-color: #80deea; /* Изменение фона */
+    transform: scale(1.05); /* Увеличение контейнера */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3); /* Усиленная тень */
+}
+
+/* Текст внутри контейнера */
+#weather-container p {
+    font-size: 18px;
+    margin: 10px 0;
+    transition: color 0.3s ease; /* Плавное изменение цвета */
+}
+
+#weather-container p :hover{
+    color: #843eb0; /* Изменение цвета текста */
+    text-decoration: underline; /* Подчеркивание */
+}
+
+strong {
+    font-weight: bold;
+}
+
+#weather-container :hover{
+    cursor: pointer;
+}
