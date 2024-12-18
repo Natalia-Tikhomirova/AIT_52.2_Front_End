@@ -7,7 +7,7 @@ body {
 
   background-image: url("./img/background.jpg");
   background-size: cover;
-  background-position:  top;
+  background-position: top;
   background-repeat: no-repeat;
   height: 100vh;
 
@@ -27,8 +27,10 @@ h1 {
   position: absolute; /* Позволяет задавать расположение относительно родителя или окна */
   top: 27%; /* Центрирование по вертикали */
   right: 5%; /* Отступ от правого края */
-  transform: translateY(-50%); /* Центрирование по вертикали относительно себя */
-  background-color: rgb(235, 158, 64) ;
+  transform: translateY(
+    -50%
+  ); /* Центрирование по вертикали относительно себя */
+  background-color: rgb(235, 158, 64);
   border-radius: 8px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
   padding: 20px;
@@ -51,7 +53,7 @@ h1 {
   font-size: 18px;
   margin: 10px 0;
   /*color: rgb(20, 120, 21);*/
-  color:  #0fe0e7;
+  color: #0fe0e7;
   transition: color 0.3s ease; /* Плавное изменение цвета */
 }
 
@@ -66,7 +68,6 @@ strong {
 
 #weather-container :hover {
   cursor: pointer;
-  
 }
 
 button {
@@ -129,58 +130,45 @@ h3 {
 
 /* Медиазапросы для адаптивности */
 @media (max-width: 768px) {
-    /* Для планшетов и мобильных устройств */
-    
-    h1 {
-      font-size: 40px; /* Уменьшаем размер заголовка */
-    }
-  
-    #weather-container {
-      top: 10%; /* Центрирование ближе к верхней части экрана */
-      right: 10%;
-      max-width: 90%; /* Увеличиваем ширину контейнера на мобильных */
-      padding: 15px; /* Уменьшаем отступы */
-    }
-  
-    #weather-container p {
-      font-size: 16px; /* Уменьшаем размер шрифта для текста */
-    }
-  
-    .spinner {
-      width: 60px; /* Уменьшаем размер спиннера */
-      height: 60px;
-    }
-  
-    button {
-      font-size: 1em; /* Уменьшаем размер кнопки */
-    }
-  }
-  
-  @media (max-width: 480px) {
-    /* Для мобильных устройств */
-    
-    h1 {
-      font-size: 30px; /* Уменьшаем заголовок ещё больше */
-    }
-  
-    #weather-container {
-      top: 5%; /* Поднимаем контейнер вверх */
-      right: 5%;
-      max-width: 95%; /* Контейнер шире на мобильных */
-    }
-  
-    #weather-container p {
-      font-size: 14px; /* Ещё больше уменьшаем размер шрифта */
-    }
-  
-    .spinner {
-      width: 50px; /* Ещё меньше спиннер */
-      height: 50px;
-    }
-  
-    button {
-      font-size: 0.9em; /* Уменьшаем размер кнопки */
-    }
+  /* Для планшетов */
+  #weather-container {
+    top: 60%;
+    padding: 15px;
+    max-width: 70%;
+    max-height: fit-content;
+    font-size: 16px; /* Уменьшаем размер шрифта */
   }
 
+  .spinner {
+    width: 70px; /* Уменьшаем спиннер */
+    height: 70px;
+  }
 
+  button {
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Для мобильных устройств */
+  #weather-container {
+    top: 60%;
+
+    padding: 10px;
+    max-width: 95%;
+    font-size: 14px;
+  }
+
+  .spinner {
+    width: 50px; /* Уменьшаем спиннер */
+    height: 50px;
+  }
+
+  button {
+    font-size: 0.9em;
+  }
+
+  h1 {
+    font-size: 30px; /* Уменьшаем размер заголовка */
+  }
+}
