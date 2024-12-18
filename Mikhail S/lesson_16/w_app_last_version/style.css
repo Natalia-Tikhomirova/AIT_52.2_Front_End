@@ -1,0 +1,87 @@
+/* Основные стили */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #e0f7fa, #80deea);
+    text-align: center;
+    color: #41208d;
+}
+
+.container {
+    padding: 20px;
+}
+
+/* Заголовок */
+h1 {
+    color: #00796b;
+    font-size: 2.5rem;
+    margin-top: 30px;
+}
+
+/* Кнопка */
+button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+/* Информация о погоде */
+#content {
+    margin-top: 30px;
+}
+
+/* Карточка с погодой */
+.weather-card {
+    display: inline-block;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    max-width: 300px;
+    text-align: left;
+    margin: 0 auto;
+    font-size: 1.2rem;
+}
+
+.weather-card p, .weather-card h2 {
+    margin: 10px 0;
+}
+
+.weather-card img {
+    width: 100%;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    .weather-card {
+        padding: 15px;
+        max-width: 250px;
+    }
+}

@@ -1,0 +1,28 @@
+body{
+    background-color: rgb(164, 154, 154);
+}
+
+button {
+    background-color: #4caf50; /* Зелёный фон */
+    border: none; /* Убираем обводку */
+    color: white; /* Белый текст */
+    padding: 12px 24px; /* Внутренние отступы */
+    text-align: center; /* Центровка текста */
+    text-decoration: none; /* Убираем подчёркивание */
+    display: inline-block; /* Стандартное поведение кнопки */
+    font-size: 16px; /* Размер шрифта */
+    margin: 10px 0; /* Отступы вокруг кнопки */
+    border-radius: 8px; /* Закруглённые края */
+    cursor: pointer; /* Рука при наведении */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Эффекты при наведении */
+}
+
+button:hover {
+    background-color: #337b37; /* Более яркий оттенок зелёного */
+    transform: scale(1.05); /* Увеличение кнопки */
+}
+
+button:active {
+    background-color: #3e8e41; /* Темнее при нажатии */
+    transform: scale(0.95); /* Уменьшение кнопки */
+}

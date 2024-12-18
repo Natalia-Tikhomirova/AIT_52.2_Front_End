@@ -1,0 +1,56 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #e0f7fa, #80deea);
+    text-align: center;
+    color: #333;
+}
+
+.container {
+    padding: 20px;
+}
+
+h1 {
+    color: #00796b;
+}
+
+button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+#weather-info {
+    margin-top: 20px;
+}
+
+.weather-card {
+    display: inline-block;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    max-width: 300px;
+    text-align: left;
+    margin: 0 auto;
+}
+
+.weather-card p, .weather-card h2 {
+    margin: 10px 0;
+}
+
+.weather-card img {
+    width: 100%;
+    border-radius: 8px;
+}

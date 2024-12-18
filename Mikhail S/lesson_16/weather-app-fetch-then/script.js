@@ -27,8 +27,7 @@ const AmsterdamParams =
         m: "",
         lang: "de"
        } 
-    };
-    
+    };   
      
 
 function fetchData(){
