@@ -39,8 +39,9 @@ async function getGeoData() {
     
 
     const weatherDescription = decodeWeatherCode(weathercode);
-    document.getElementById('weatherdescription').textContent = weatherDescription;
+    document.getElementById('weather-description').textContent = weatherDescription; //
 }
+
 
 function decodeWeatherCode(code) {
     switch (code) {
@@ -92,5 +93,3 @@ function decodeWeatherCode(code) {
 
 getGeoData();
 
-const weatherCode = 3;
-console.log(decodeWeatherCode(weatherCode)); 
