@@ -36,6 +36,7 @@ async function getGeoData() {
   
     document.getElementById('temperature').textContent = `${temperature}°C`;
     document.getElementById('windspeed').textContent = `${windspeed} m/s`;
+    document.getElementById('weatherdescription').textContent = `${weathercode}`;
     
 
     const weatherDescription = decodeWeatherCode(weathercode);
