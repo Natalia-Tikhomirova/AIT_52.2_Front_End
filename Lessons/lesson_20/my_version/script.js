@@ -39,7 +39,7 @@ async function getGeoData() {
     
 
     const weatherDescription = decodeWeatherCode(weathercode);
-    document.getElementById('weather-description').textContent = weatherDescription; //
+    document.getElementById('weatherdescription').textContent = weatherDescription; //
 }
 
 
