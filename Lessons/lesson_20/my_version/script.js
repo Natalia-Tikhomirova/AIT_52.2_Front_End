@@ -3,15 +3,13 @@
 сделайте используя async / await асинхронные функции
  cсылки на api в чате zoom */
 
- /* 2. сделайте fetch запрос по адресу:
+/* 2. сделайте fetch запрос по адресу:
   https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&current_weather=true
   вам нужно заменить координаты в строке на данные выше
   получите данные погоды: температуру, скорость ветра и.т.д
   также заберите weathercode - он вам понадобится */
 
- 
-  
-async function getGeoData() {
+  async function getGeoData() {
    
     const response = await fetch('https://get.geojs.io/v1/ip/geo.json');
     const data = await response.json(); 
@@ -102,4 +100,3 @@ getGeoData();
 document.getElementById('update-weather-btn').addEventListener('click', function() {
     getGeoData();
   })
-

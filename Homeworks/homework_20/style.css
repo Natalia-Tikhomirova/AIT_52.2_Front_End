@@ -1,0 +1,186 @@
+/* Основные стили */
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+
+  background-image: url("./img/background.jpg");
+  background-size: cover;
+  background-position:  top;
+  background-repeat: no-repeat;
+  height: 100vh;
+
+  color: #12694f;
+}
+
+/* Заголовок */
+h1 {
+  font-size: 60px; /* Размер шрифта для текста */
+  color: #843eb0;
+  margin-top: 20px;
+  text-shadow: 0 0 10px #23888b;
+}
+
+/* Контейнер для данных */
+#weather-container {
+  position: absolute; /* Позволяет задавать расположение относительно родителя или окна */
+  top: 27%; /* Центрирование по вертикали */
+  right: 5%; /* Отступ от правого края */
+  transform: translateY(-50%); /* Центрирование по вертикали относительно себя */
+  background-color: rgb(235, 158, 64) ;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  max-width: 300px;
+  margin: 20px auto;
+  text-align: center;
+  /* transition: all 0.3s ease; /* Плавное изменение */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Плавный переход */
+}
+
+/* Эффект при наведении на контейнер */
+#weather-container:hover {
+  background-color: rgb(223, 172, 78); /* Изменение фона */
+  transform: scale(1.05); /* Увеличение контейнера */
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3); /* Усиленная тень */
+}
+
+/* Текст внутри контейнера */
+#weather-container p {
+  font-size: 18px;
+  margin: 10px 0;
+  /*color: rgb(20, 120, 21);*/
+  color:  #0fe0e7;
+  transition: color 0.3s ease; /* Плавное изменение цвета */
+}
+
+#weather-container p :hover {
+  color: #843eb0; /* Изменение цвета текста */
+  text-decoration: underline; /* Подчеркивание */
+}
+
+strong {
+  font-weight: bold;
+}
+
+#weather-container :hover {
+  cursor: pointer;
+  
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1.1em;
+  color: #e49143;
+  background-color: #47129d;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #843eb0;
+}
+
+.loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px; /* Расстояние между текстом и спиннером */
+
+  position: absolute;
+  top: 28%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+h3 {
+  font-size: 30px; /* Размер шрифта для текста */
+  color: #0fe0e7; /* Цвет текста */
+  margin: 0; /* Убираем отступы */
+}
+.spinner {
+  width: 80px; /* Увеличиваем ширину */
+  height: 80px; /* Увеличиваем высоту */
+  border: 8px solid #fff; /* Увеличиваем толщину полос */
+  border-bottom-color: #e77f0f;
+  border-radius: 50%;
+  box-sizing: border-box;
+  animation: rotation 0.7s linear infinite;
+}
+
+.hidden {
+  display: none; /* Скрывает элемент */
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Медиазапросы для адаптивности */
+@media (max-width: 768px) {
+    /* Для планшетов и мобильных устройств */
+    
+    h1 {
+      font-size: 40px; /* Уменьшаем размер заголовка */
+    }
+  
+    #weather-container {
+      top: 10%; /* Центрирование ближе к верхней части экрана */
+      right: 10%;
+      max-width: 90%; /* Увеличиваем ширину контейнера на мобильных */
+      padding: 15px; /* Уменьшаем отступы */
+    }
+  
+    #weather-container p {
+      font-size: 16px; /* Уменьшаем размер шрифта для текста */
+    }
+  
+    .spinner {
+      width: 60px; /* Уменьшаем размер спиннера */
+      height: 60px;
+    }
+  
+    button {
+      font-size: 1em; /* Уменьшаем размер кнопки */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    /* Для мобильных устройств */
+    
+    h1 {
+      font-size: 30px; /* Уменьшаем заголовок ещё больше */
+    }
+  
+    #weather-container {
+      top: 5%; /* Поднимаем контейнер вверх */
+      right: 5%;
+      max-width: 95%; /* Контейнер шире на мобильных */
+    }
+  
+    #weather-container p {
+      font-size: 14px; /* Ещё больше уменьшаем размер шрифта */
+    }
+  
+    .spinner {
+      width: 50px; /* Ещё меньше спиннер */
+      height: 50px;
+    }
+  
+    button {
+      font-size: 0.9em; /* Уменьшаем размер кнопки */
+    }
+  }
+
+
