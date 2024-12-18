@@ -3,21 +3,20 @@
 сделайте используя async / await асинхронные функции
  cсылки на api в чате zoom */
 
- 
-  
-async function getGeoData() {
-   
-    const response = await fetch('https://get.geojs.io/v1/ip/geo.json');
-    const data = await response.json(); 
 
-    
+async function getWeather() {
+    const res = await fetch(' https://get.geojs.io/v1/ip/geo.json')
+    const data = await res.json()
+    console.log(data);
+
+    // const city = data.city
+    // const latitude = data.latitude
+    // const longitude = data.longitude
+
     const { latitude, longitude, city } = data;
 
     
-    document.getElementById('latitude').textContent = latitude;
-    document.getElementById('longitude').textContent = longitude;
-    document.getElementById('city').textContent = city;
+    
 }
 
-
-getGeoData();
+getWeather();
