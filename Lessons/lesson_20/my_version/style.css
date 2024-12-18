@@ -53,3 +53,21 @@ strong {
 #weather-container :hover{
     cursor: pointer;
 }
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1.1em;
+    color: #fff;
+    background-color: #47129d;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #843eb0;
+    
+  }
+  

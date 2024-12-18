@@ -98,3 +98,8 @@ function decodeWeatherCode(code) {
 
 getGeoData();
 
+// Обработчик для кнопки "Обновить погоду"
+document.getElementById('update-weather-btn').addEventListener('click', function() {
+    getGeoData();
+  })
+
