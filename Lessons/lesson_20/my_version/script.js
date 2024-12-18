@@ -34,14 +34,18 @@ async function getGeoData() {
     const { temperature, windspeed, weathercode } = weatherData.current_weather;
 
   
+    // Отображаем данные о погоде
     document.getElementById('temperature').textContent = `${temperature}°C`;
     document.getElementById('windspeed').textContent = `${windspeed} m/s`;
-    document.getElementById('weatherdescription').textContent = `${weathercode}`;
-    
 
+    // Отображаем код погоды
+    document.getElementById('weathercode').textContent = weathercode; 
+
+    // Декодируем код погоды и отображаем описание
     const weatherDescription = decodeWeatherCode(weathercode);
-    document.getElementById('weatherdescription').textContent = weatherDescription; //
+    document.getElementById('weatherdescription').textContent = weatherDescription; 
 }
+
 
 
 function decodeWeatherCode(code) {
